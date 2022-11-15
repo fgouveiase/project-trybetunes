@@ -2,11 +2,45 @@ import React, { Component } from 'react';
 import Header from '../Components/Header';
 
 class Search extends Component {
+  state = {
+    artist: '',
+  };
+
+  handleChange = ({ target }) => {
+    const { value } = target;
+    this.setState({
+      artist: value,
+    });
+  };
+
   render() {
+    const minValue = 2;
+    const { artist } = this.state;
     return (
       <div data-testid="page-search">
-        Search
         <Header />
+        <form className="form">
+          <label htmlFor="search-artist-input">
+            Nome
+            <input
+              type="text"
+              data-testid="search-artist-input"
+              name="artistname"
+              value={ artist }
+              placeholder="nome do artista"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            type="button"
+            data-testid="search-artist-button"
+            name="artistbutton"
+            id="artistbutton"
+            disabled={ artist.length < minValue }
+          >
+            Pesquisar
+          </button>
+        </form>
       </div>
     );
   }
