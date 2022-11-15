@@ -8,7 +8,7 @@ class Login extends Component {
     login: '',
     loading: false,
     linkSearch: false,
-    disableButton: true,
+    // disableButton: true,
   };
 
   handleChange = ({ target }) => {
@@ -39,7 +39,7 @@ class Login extends Component {
   };
 
   render() {
-    const { login, loading, linkSearch, disableButton } = this.state;
+    const { login, loading, linkSearch } = this.state;
     return (
       <div data-testid="page-login">
         { loading === true ? (<Loading />) : (
