@@ -24,8 +24,7 @@ class Album extends Component {
     const list = musics.filter((music) => music.trackName).map((music) => (
       <MusicCard
         key={ music.trackId }
-        trackName={ music.trackName }
-        previewUrl={ music.previewUrl }
+        music={ music }
       />));
     return (
       <div data-testid="page-album">
