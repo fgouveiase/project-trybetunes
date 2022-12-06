@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import getMusics from '../services/musicsAPI';
-import MusicCard from './MusicCard';
+import MusicCard from '../Components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
